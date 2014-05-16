@@ -1,6 +1,6 @@
 We're going to write a simple [Hacker News](https://news.ycombinator.com/) scraper. 
 
-Incase you're not fully sure what a web scraping is, check out [this useful resource](https://www.google.ca/search?q=what+is+a+web+scraper).
+Incase you're not fully sure what web scraping is, check out [this useful resource](https://www.google.ca/search?q=what+is+a+web+scraper).
 
 We're going to build Ruby classes that represents a particular Hacker News comment thread.
 
@@ -107,7 +107,7 @@ We're going to learn two new things: the basics of parsing command-line argument
 
 First, read [this blog post about command-line arguments in Ruby](http://alvinalexander.com/blog/post/ruby/how-read-command-line-arguments-args-script-program). How can you use `ARGV` to get the URL passed in to your Ruby script?
 
-Second, read about Ruby's [OpenURI](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/open-uri/rdoc/OpenURI.html) module. By requiring 'open-uri' at the top of your Ruby program, you can use open with a URL:
+Second, read about Ruby's [OpenURI](http://www.ruby-doc.org/stdlib-2.0.0/libdoc/open-uri/rdoc/OpenURI.html) module. By requiring 'open-uri' at the top of your Ruby program, you can use open with a URL:
 
     require 'open-uri'
 
