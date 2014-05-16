@@ -1,4 +1,6 @@
-We're going to write a simple [Hacker News](https://news.ycombinator.com/) scraper. We have to be polite, though: if we're too aggressive we'll get our network banned.
+We're going to write a simple [Hacker News](https://news.ycombinator.com/) scraper. 
+
+Incase you're not fully sure what a web scraping is, check out [this useful resource](https://www.google.ca/search?q=what+is+a+web+scraper).
 
 We're going to build Ruby classes that represents a particular Hacker News comment thread.
 
@@ -16,11 +18,11 @@ This assignment will also have us:
 
 #### Save a HTML Page
 
-First, we're going to save a specific post as a plain HTML file for us to practice on. As we're developing a scraper we'll be tempted to hammer the HN servers, which will almost certainly get everyone temporarily banned. We'll use the local HTML file to get the scraper working before we create a "live" version.
+First, we're going to save a specific HN post as a plain HTML file for us to practice on. As we're developing a scraper we'll be tempted to hammer the HN servers, which will almost certainly get everyone temporarily banned. We'll use the local HTML file to get the scraper working before we create a "live" version.
 
-Note that this implies something about how your class should work: it shouldn't care how it gets the HTML.
+Note that this implies something about how your class should work: it shouldn't care how it gets the HTML content.
 
-Visit the Hacker News homepage and click through to a specific post. If you can't find one, use the [Show HN: Velocity.js – Accelerated JavaScript animation (VelocityJS.org)](https://news.ycombinator.com/item?id=7663775) post. You can save the HTML for this page somewhere using the `curl` command.
+Visit the Hacker News homepage and click through to a specific post. I'd suggest a cool one, like the [Show HN: Velocity.js – Accelerated JavaScript animation (VelocityJS.org)](https://news.ycombinator.com/item?id=7663775) post. You can save the HTML for this page somewhere using the `curl` command.
 
 SSH into your vagrant box, `cd` into your project directory, and run the following command:
 
