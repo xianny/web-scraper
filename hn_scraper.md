@@ -1,4 +1,4 @@
-We're going to write a simple Hacker News scraper. We have to be polite, though: if we're too aggressive we'll get our network banned.
+We're going to write a simple [Hacker News](https://news.ycombinator.com/) scraper. We have to be polite, though: if we're too aggressive we'll get our network banned.
 
 We're going to build Ruby classes that represents a particular Hacker News comment thread.
 
@@ -20,26 +20,27 @@ First, we're going to save a specific post as a plain HTML file for us to practi
 
 Note that this implies something about how your class should work: it shouldn't care how it gets the HTML.
 
-Visit the Hacker News homepage and click through to a specific post. If you can't find one, use the ______ post. You can save the HTML for this page somewhere one of two ways.
+Visit the Hacker News homepage and click through to a specific post. If you can't find one, use the [Show HN: Velocity.js – Accelerated JavaScript animation (VelocityJS.org)](https://news.ycombinator.com/item?id=7663775) post. You can save the HTML for this page somewhere using the `curl` command.
 
-Right click the page and select "view source." Copy and paste the HTML into Sublime and save the file.
-Alternatively, open Terminal, make a hn_scraper directory, `cd` into it, and run the following command:
+SSH into your vagrant box, `cd` into your project directory, and run the following command:
 
-    curl https://news.ycombinator.com/item?id=______ > post.html
+    $ curl https://news.ycombinator.com/item?id=7663775 > post.html
     
+_NOTE:_ The $ is not to be typed in literally, it denotes the command prompt. 
+
 This will create a `post.html` file which contains the HTML from the URL you entered. You're free to enter another URL.
 
 #### Playing around with Nokogiri
 
-First, make sure the nokogiri gem is installed. We'll use this to parse the HTML file. You can test this by running irb/pry and typing
+First, make sure the `nokogiri` gem is installed. We'll use this to parse the HTML file. You can test this by running irb/pry and typing
 
     require 'nokogiri'
 
 If you get an error that means Nokogiri is not installed. Install it by running this command:
 
-    gem install nokogiri
+    $ gem install nokogiri
 
-You'll want to have the Nokogiri documentation about parsing an HTML document available. Try this from irb/pry:
+You'll want to have the [Nokogiri documentation about parsing an HTML document](http://nokogiri.org/tutorials/parsing_an_html_xml_document.html) available. Try this from irb/pry:
 
     doc = Nokogiri::HTML(File.open('post.html'))
     
@@ -55,7 +56,7 @@ Here's an example of how you'd write a method that takes a Nokogiri document of 
       end
     end
 
-It's likely been a while since you've dealt with CSS Selectors, which is what the `search` method is using to select elements off the page. If you're feeling uncomfortable about them, feel free to revisit that section in the prep course.
+It's likely been a while since you've dealt with [CSS Selectors](http://css.maxdesign.com.au/selectutorial/), which is what the `search` method is using to select elements off the page. If you're feeling uncomfortable about them, feel free to revisit that section in the prep course.
 
 What do these other Nokogiri calls return?
 
