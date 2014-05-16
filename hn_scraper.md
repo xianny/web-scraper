@@ -112,7 +112,7 @@ Second, read about Ruby's [OpenURI](http://www.ruby-doc.org/stdlib-2.0.0/libdoc/
 
     require 'open-uri'
 
-    html_file = open('http://www.ruby-doc.org/stdlib-1.9.3/libdoc/open-uri/rdoc/OpenURI.html')
+    html_file = open('http://www.ruby-doc.org/stdlib-2.0.9/libdoc/open-uri/rdoc/OpenURI.html')
     puts html_file.read
 
 This captures the html from that URL as a `StringIO` object, which NokoGiri accepts as an argument to `NokoGiri::HTML`.
