@@ -2,7 +2,7 @@ We're going to write a simple [Hacker News](https://news.ycombinator.com/) scrap
 
 Incase you're not fully sure what web scraping is, check out [this useful resource](https://www.google.ca/search?q=what+is+a+web+scraper).
 
-We're going to build Ruby classes that represents a particular Hacker News comment thread.
+We're going to build Ruby classes that represent a particular Hacker News comment thread.
 
 ### Learning Goals
 The main goal is to learn how to translate a pre-existing object model — in this case, Hacker News' model — using OOP in Ruby.
