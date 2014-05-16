@@ -3,14 +3,14 @@ We're going to write a simple [Hacker News](https://news.ycombinator.com/) scrap
 We're going to build Ruby classes that represents a particular Hacker News comment thread.
 
 ### Learning Goals
-The main goal is to learn how to translate a pre-existing object model — in this case, Hacker News' model — into one that's easy for us to manipulate.
+The main goal is to learn how to translate a pre-existing object model — in this case, Hacker News' model — using OOP in Ruby.
 
-This assignment will also allow us to:
-* Recall fundamental/basic HTML and CSS
-* Learn about the Nokogiri gem
-* Learn about using `ARGV` for Command-Line arguments
-* Learn about `curl`
-* Learn about the Ruby's OpenURI module
+This assignment will also have us:
+* Recalling fundamental/basic HTML and CSS
+* Learning about the Nokogiri gem
+* Learning about using `ARGV` for Command-Line arguments
+* Learning about the `curl` command line tool.
+* Learning about the Ruby's `OpenURI` module
 
 ### Objectives
 
