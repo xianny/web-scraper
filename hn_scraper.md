@@ -44,11 +44,11 @@ You'll want to have the [Nokogiri documentation about parsing an HTML document](
 
     doc = Nokogiri::HTML(File.open('post.html'))
     
-Make sure you're in the same directory as `post.html`.
+For this to work, make sure you run this ruby code from the same directory as `post.html`.
 
-What does the Nokogiri object itself look like? Don't worry about having to wade through it's innards, but reading [Parsing HTML with Nokogiri](http://ruby.bastardsbook.com/chapters/html-parsing/) from The Bastard's Book of Ruby can give you a feel for how Nokogiri works.
+What does the Nokogiri object itself look like? Don't worry about having to sift through it's innards, but reading [Parsing HTML with Nokogiri](http://ruby.bastardsbook.com/chapters/html-parsing/) from The Bastard's Book of Ruby can give you a feel for how Nokogiri works.
 
-Here's an example of how you'd write a method that takes a Nokogiri document of a Hacker News thread as input and return an array of commentor usernames:
+Here's an example method that takes a Nokogiri document of a Hacker News thread as input and returns an array of commentor's usernames:
 
     def extract_usernames(doc)
       doc.search('.comhead > a:first-child').map do |element|
@@ -69,8 +69,6 @@ What do these other Nokogiri calls return?
 What is the data structure? Can you call ruby methods on the returned data structure?
 
 Make sure you open up the html page in your browser and poke around the source code to see how the page is structured. What do their tags actually look like? How are those tags represented in the Nokogiri searches?
-
-Choose at least one other attribute to add for your comments class. What other comment-related data from the html page can you include? Figure out your own Nokogiri call to pull in the data.
 
 #### Creating Your Object Model
 
