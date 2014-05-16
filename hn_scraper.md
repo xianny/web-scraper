@@ -8,6 +8,7 @@ We're going to build Ruby classes that represent a particular Hacker News commen
 The main goal is to learn how to translate a pre-existing object model — in this case, Hacker News' model — using OOP in Ruby.
 
 This assignment will also have us:
+
 * Recalling fundamental/basic HTML and CSS
 * Learning about the Nokogiri gem
 * Learning about using `ARGV` for Command-Line arguments
