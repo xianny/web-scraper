@@ -1,3 +1,5 @@
+require 'colorize'
+
 class Comment
   attr_accessor :poster, :text
 
@@ -8,7 +10,7 @@ class Comment
 
   ## displays the comment
   def display
-    puts "#{poster} commented:"
+    puts "#{poster} commented:".green
     puts "#{text}"
     puts "--------------------------------------------"
   end

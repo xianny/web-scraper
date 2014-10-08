@@ -29,7 +29,6 @@ class Post
     puts "Posted by:  #{poster}"
     puts "#{points} points, item ID #{item_id}"
     puts "------------------------------------"
-    puts "Comments begin:"
     comments
   end
 
