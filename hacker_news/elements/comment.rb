@@ -8,12 +8,6 @@ module HackerNews
         @text = text
       end
 
-      ## displays the comment
-      def display
-        puts "#{poster} commented:".green
-        puts "#{text}"
-        puts "--------------------------------------------"
-      end
     end
   end
 end

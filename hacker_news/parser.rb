@@ -8,10 +8,10 @@ module HackerNews
 
       def run(doc)
         @doc = doc
-        post = create_post
-        post.display ## should return a post object
+        page = create_post
       end
 
+      ## TODO: minor: see about mixing in Extract module to reduce lines of code
       ## creates a new Post object with all associated comments
       def create_post
         title = Extract.title(@doc)

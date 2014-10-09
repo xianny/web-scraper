@@ -1,7 +1,7 @@
 module HackerNews
   module Elements
     class Post
-      attr_accessor :title, :url, :points, :item_id, :poster
+      attr_reader :title, :url, :points, :item_id, :poster, :comments
 
       def initialize(title,url,points,item_id,poster)
         @title = title
@@ -12,27 +12,9 @@ module HackerNews
         @comments = []
       end
 
-      ##TODO returns all comments associated with this post
-      def comments
-        @comments.each do |comment|
-          comment.display
-        end
-      end
-
-      ##TODO takes a Comment object and adds it to the comments associated with this post
+      ## Takes a Comment object and adds it to the comments associated with this post
       def add_comment(comment)
         @comments << comment
-      end
-
-      def display ## TODO lookup EOS for multi-line string
-        puts "------------------------------------"
-        puts "Post Title: #{title}"
-        puts "Comments:   #{@comments.length}"
-        puts "URL:        #{url}"
-        puts "Posted by:  #{poster}"
-        puts "#{points} points, item ID #{item_id}"
-        puts "------------------------------------"
-        comments
       end
 
     end
