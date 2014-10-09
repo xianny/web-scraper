@@ -1,45 +1,35 @@
 require 'nokogiri'
 require 'open-uri'
-require_relative 'post'
-require_relative 'comment'
-require_relative 'extract'
+require_relative 'hacker_news/hacker_news'
 
 class Scrape
-  attr_accessor :url, :html_file, :doc
+  attr_accessor :url, :doc
 
-  ## takes the path of the file you want to convert
+  class MissingParserError < StandardError ## I haven't made the appropriate extractor
+  end
+
+  ## takes filepath of file to be parsed
   def initialize(url)
     @url = url
-    make_nokogiri_file
+    parse_file
   end
 
-  ## takes url set in `initialize` and create nokogiri file
-  def make_nokogiri_file
-    html_file = open(url)
-    @doc = Nokogiri::HTML(File.open(html_file))
-    create_post
-  end
-
-  ## creates a new Post object 
-  def create_post
-    title = Extract.title(@doc)
-    url = Extract.title_url(@doc)
-    points = Extract.points(@doc) 
-    item_id = Extract.post_item_id(@doc) 
-    poster = Extract.original_poster(@doc)
-    post = Post.new(title, url, points, item_id, poster)
-    parse_comments(post)
-  end
-
-  ## creates a new Comment object for each comment, adding it to the Post
-  def parse_comments(post)
-    comments = Extract.comments(@doc)
-    usernames = Extract.usernames(@doc)
-    for i in 0...comments.length
-      post.add_comment(Comment.new(usernames[i],comments[i]))
+  # ## TODO returns appropriate parser class depending on url
+  def parser_class
+    case @url
+    when @url then HackerNews::Parser
+    # when @url =~ /.*reddit.*/i then require './reddit/parser'
+    else
+      raise MissingParserError
     end
-    post.display
   end
+
+  ## converts file and runs appropriate parser
+  def parse_file
+    doc = Nokogiri::HTML(open(url))
+    parser = parser_class.run(doc)
+  end
+
 
 end
 
