@@ -12,24 +12,27 @@ class Scrape
   def initialize(url)
     @url = url
     @doc = Nokogiri::HTML(open(url))
-    parse_file
+    @page = parsed_file(@doc)
     display_file
   end
 
   ## converts file and runs appropriate parser
-  def parse_file
-    @page = parser_class.run(@doc)
+  def parsed_file(doc)
+    parser = parser_class.new
+    parser.run(doc)
   end
 
+  ## display file
   def display_file
-    display_class.run(@page)
+    display = display_class.new
+    display.run(@page)
   end
 
     # ## TODO returns appropriate parser class depending on url
   def parser_class
     case @url
     when @url then HackerNews::Parser
-    # when @url =~ /.*reddit.*/i then require './reddit/parser'
+    # when @url =~ /.*reddit.*/i then HackerNews::Reddit
     else
       raise MissingParserError
     end

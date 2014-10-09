@@ -2,7 +2,6 @@ module HackerNews
   class CommandLineDisplay
     attr_reader :page
 
-    class << self
 
       ## Takes a single page from Hacker News (converted to Elements::Post Object) and displays it on command line
       def run(page)
@@ -39,6 +38,5 @@ module HackerNews
         puts "--------------------"
       end
 
-    end
   end
 end
