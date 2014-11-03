@@ -1,3 +1,5 @@
+require_relative '../config'
+
 module HackerNews
   class CommandLineDisplay
     attr_reader :page
@@ -27,12 +29,12 @@ module HackerNews
       ## Puts all associated Elements::Comment Objects to the command line
       def display_comments
         @page.comments.each do |comment|
-          display(comment)
+          display_comment(comment)
         end
       end
 
       ## Takes an Elements::Comment object and puts it to command line
-      def display(comment) 
+      def display_comment(comment) 
         puts "#{comment.poster} commented:".green
         puts "#{comment.text}"
         puts "--------------------"

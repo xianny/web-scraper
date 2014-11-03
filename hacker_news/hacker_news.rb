@@ -1,12 +1,10 @@
-require 'colorize'
-require 'nokogiri'
-require_relative 'extract'
-require_relative 'command_line_display'
+require_relative 'extractor'
 require_relative 'elements/elements'
+require_relative 'command_line_display'
 
 module HackerNews
   class Parser
-    include Extract
+    include Extractor
     attr_reader :doc
 
     def run(doc)

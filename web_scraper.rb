@@ -1,13 +1,5 @@
-require_relative 'scrape'
+require './config'
 
-class InvalidInputError < StandardError
-end
 
 ## CLI expected to run OR just crash/throw error 
-input = ARGV[0]
-# check for input
-if input
-  Scrape.new(input)
-else
-  raise InvalidInputError, "Don't have parser for that yet"
-end
+ARGV[0] ? Scraper.run(ARGV[0]) : Manual.run

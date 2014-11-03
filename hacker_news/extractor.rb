@@ -1,6 +1,6 @@
 ## This Extract module extracts info from Hacker News pages, e.g. https://news.ycombinator.com/item?id=5003980
 module HackerNews
-  module Extract
+  module Extractor
     
     ## takes nokogiri doc and returns post title
     def title(doc)
